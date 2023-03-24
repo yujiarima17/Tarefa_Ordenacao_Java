@@ -9,7 +9,7 @@ public class tiposDeOrdenacao {
         }
     }
 
-    public static void mostrarVetor(int[] v) {
+    public void mostrarVetor(int[] v) {
         for (int i = 0; i < v.length; i++) {
             System.out.print(v[i] + " ");
         }
@@ -30,19 +30,25 @@ public class tiposDeOrdenacao {
     }
 
     public void ordernarInsercao(int[] v) {
-        for (int i = 1; i < v.length; i++) {
-            int index = i;
-            while (index > 0 && v[index] < v[index - 1]) {
-                int aux = v[index];
-                v[index] = v[index - 1];
-                v[index - 1] = aux;
-                index = index - 1;
+        int index;
+        int j;
+        // 30 20 10 40
+        // 30 30 10 40
+        // 
+        // 20 30 30 40
+        // 20 20 30 40
+        // 20 10 30 40
+        for(int i =1;i<v.length;i++){
+            index = v[i];
+            for( j= i -1; j>=0 && v[j]>index;j--){
+                v[j+1] = v[j];
             }
+            v[j+1] = index;
         }
     }
 
     public void ordernarSelecao(int[] v) {
-        int index = 0;
+        int index;
         for (int i = 0; i < v.length; i++) {
             index = i;
             for (int j = i + 1; j < v.length; j++) {

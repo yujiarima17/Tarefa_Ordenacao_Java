@@ -22,12 +22,12 @@ public class ambienteTeste {
         return tempos;
     }
     public static void main(String[] args) {
-        // arrayList que armazena os valores dos tempos;
-        ArrayList <Long> array_tempos = new ArrayList<>();
-        // gera uma lista de tempos no terminal;
-        System.out.println("ArrayList com respectivos tempos de ordenacao:");
-        System.out.print("\n");
-        System.out.print(gerar_Lista_Teste(array_tempos,,));
+        int[] v = new int[10];
+        ordenador.geraVetor(v);
+        ordenador.mostrarVetor(v);
+        System.out.println('\n');
+        ordenador.ordernarInsercao(v);
+        ordenador.mostrarVetor(v);
       
 
     }
